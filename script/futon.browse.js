@@ -91,7 +91,7 @@
               $.couch.db(dbName).info({
                 success: function(info) {
                   $("#databases tbody.content tr:eq(" + idx + ")")
-                    .find("td.size").text($.futon.formatSize(info.disk_size)).end()
+                    .find("td.size").text($.futon.formatSize((info.disk_size) ? info.disk_size : info.sizes.active)).end()
                     .find("td.count").text(info.doc_count).end()
                     .find("td.seq").text(info.update_seq);
                 },

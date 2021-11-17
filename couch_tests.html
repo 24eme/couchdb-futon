@@ -26,30 +26,7 @@ specific language governing permissions and limitations under the License.
     <script src="script/futon.js"></script>
     <script src="script/couch.js"></script>
     <script src="script/couch_test_runner.js"></script>
-    <script>
-      $(function() {
-        updateTestsListing();
-        $("#toolbar button.run").click(function() {
-          setupAdminParty(runAllTests) ;
-        });
-        $("#toolbar button.load").click(function() {
-          location.reload(true);
-        });
-        $("#toolbar button.share").click(function() {
-          $.showDialog("dialog/_share_test_reports.html", {
-            submit: function(data, callback) {
-              $.couch.replicate("test_suite_reports", "http://couchdb.couchdb.org/test_suite_reports");
-              callback();
-            }
-          });
-        });
-        $("#toolbar button.add").click(function() {
-          location = "custom_test.html";
-        });
-      });
-      var testsPath = document.location.toString().split('?')[1];
-      loadScript(testsPath||"script/couch_tests.js");
-    </script>
+    <script src="script/app_couch_tests.js"></script>
   </head>
   <body><div id="wrap">
     <h1>

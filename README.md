@@ -13,6 +13,7 @@ In couchdb installation folder (/opt/couchdb with ubuntu couchdb package) :
 ```
 cd /opt/couchdb/share
 git clone https://github.com/24eme/couchdb-futon.git
+cd /opt/couchdb/share
 mv www couchdb-fauxton # Unpublish Fauxton
 ln -s couchdb-futon www # Publish Futon
 ```
